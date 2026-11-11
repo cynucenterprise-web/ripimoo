@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  /* Taken from design-reference/src/index.css's :root block (teal/zinc
+     palette) — replaces the earlier indigo/near-navy token set per the
+     redesign-v2 task ("take colors from the screenshots and the
+     prototype's tokens, this replaces the earlier 'keep old tokens'
+     rule"). --color-teal is kept as an alias of --color-accent (same
+     hex) so every existing text-teal/bg-teal/border-teal usage already
+     in the app (locked-fact badges, changed-line highlights, etc.)
+     resolves to the same teal as every text-accent/bg-accent usage,
+     without having to touch each call site individually. */
+  --color-ink: #18181b;
+  --color-ink-soft: #52525b;
+  --color-ink-muted: #71717a;
+  --color-paper: #ffffff;
+  --color-paper-soft: #fafafa;
+  --color-subtle: #f4f4f5;
+  --color-line: #e4e4e7;
+  --color-line-strong: #d4d4d8;
+  --color-accent: #0f766e;
+  --color-accent-strong: #115e59;
+  --color-accent-light: #f0fdfa;
+  --color-accent-border: #99f6e4;
+  --color-teal: #0f766e;
+  --color-warn: #d97706;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-paper: var(--color-paper);
+  --color-paper-soft: var(--color-paper-soft);
+  --color-subtle: var(--color-subtle);
+  --color-line: var(--color-line);
+  --color-line-strong: var(--color-line-strong);
+  --color-accent: var(--color-accent);
+  --color-accent-strong: var(--color-accent-strong);
+  --color-accent-light: var(--color-accent-light);
+  --color-accent-border: var(--color-accent-border);
+  --color-teal: var(--color-teal);
+  --color-warn: var(--color-warn);
+  --font-sans: var(--font-jakarta);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--color-paper-soft);
+  color: var(--color-ink);
+}
+
+.gradient-text {
+  background-image: linear-gradient(90deg, var(--color-accent), var(--color-teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
